@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { loading = false } = defineProps<{
   loading?: boolean
-  text: string
+  text?: string
 }>()
 
 defineEmits(['click'])
@@ -11,10 +11,14 @@ defineEmits(['click'])
   <button
     @click="$emit('click')"
     type="button"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+    class="text-gray-900 bg-white hover:bg-gray-100 border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2 mb-2"
   >
-    <span v-if="loading">Loading...</span>
-    <span v-else>{{ text }}</span>
+    <template v-if="loading">Loading...</template>
+    <template v-else>
+      <slot>
+        {{ text }}
+      </slot>
+    </template>
   </button>
 </template>
 

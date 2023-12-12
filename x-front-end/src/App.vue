@@ -2,6 +2,7 @@
 import XButton from './components/XButton.vue'
 import XTextField from './components/XTextField.vue'
 import XPost from './components/XPost.vue'
+import MetaMaskICon from './components/MetaMaskICon.vue'
 </script>
 
 <template>
@@ -14,7 +15,10 @@ import XPost from './components/XPost.vue'
         This is a decentralized twitter, connect your blockchain wallet and use your Ethereum to
         send a message. Every post sent you will have a chance to earn a value of Ethereum back.
       </p>
-      <XButton text="Connect wallet" />
+      <XButton>
+        <MetaMaskICon />
+        Connect wallet
+      </XButton>
       <XTextField
         label="Post"
         name="post"
