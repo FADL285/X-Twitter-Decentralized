@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup>
 import XButton from './components/XButton.vue'
 import XTextField from './components/XTextField.vue'
 import XPost from './components/XPost.vue'
