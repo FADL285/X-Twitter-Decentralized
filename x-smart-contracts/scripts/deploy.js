@@ -5,7 +5,9 @@ const main = async () => {
   console.log('Deploy the contract made by:', owner.address)
   console.log('Account balance:', accountBalance.toString())
 
-  const xPost = await hre.ethers.deployContract('XPost')
+  const xPost = await hre.ethers.deployContract('XPost', {
+    value: hre.ethers.parseEther('0.1')
+  })
   await xPost.waitForDeployment()
 
   console.log('Deploy the contract to the address:', xPost.target)
