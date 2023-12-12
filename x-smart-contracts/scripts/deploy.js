@@ -2,13 +2,13 @@ const main = async () => {
   const [owner] = await hre.ethers.getSigners()
   const accountBalance = await owner.provider.getBalance(owner.address)
 
-  console.log("Deploy the contract made by:", owner.address)
-  console.log("Account balance:", accountBalance.toString())
+  console.log('Deploy the contract made by:', owner.address)
+  console.log('Account balance:', accountBalance.toString())
 
-  const xPost = await hre.ethers.deployContract("XPost")
+  const xPost = await hre.ethers.deployContract('XPost')
   await xPost.waitForDeployment()
 
-  console.log("Deploy the contract to the address:", xPost.target)
+  console.log('Deploy the contract to the address:', xPost.target)
 }
 
 const runMain = async () => {
